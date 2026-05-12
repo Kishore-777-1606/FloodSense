@@ -1,0 +1,161 @@
+.map-wrapper {
+  position: relative;
+}
+.map-wrapper {
+  flex: 2;
+
+  height: 640px;
+
+  box-sizing: border-box;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  border: 1px solid #dbe2ea;
+
+  background: white;
+
+  box-shadow:
+    0 8px 28px rgba(15,23,42,0.08);
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* 🔥 MAP INTERACTION */
+.leaflet-interactive {
+  transition:
+    fill-opacity 0.25s ease,
+    stroke-width 0.25s ease,
+    filter 0.25s ease;
+
+  cursor: pointer;
+}
+
+.leaflet-interactive:hover {
+  filter: brightness(1.08);
+}
+
+/* 🔥 TOOLTIP */
+.tooltip-content {
+  font-family: 'Inter', sans-serif;
+
+  min-width: 140px;
+}
+
+.tooltip-content h4 {
+  font-size: 14px;
+
+  margin-bottom: 8px;
+
+  color: #111827;
+}
+
+.tooltip-content p {
+  font-size: 12px;
+
+  margin-bottom: 4px;
+
+  color: #374151;
+}
+
+.tooltip-content strong {
+  color: #111827;
+}
+
+.leaflet-tooltip {
+  background: rgba(255,255,255,0.96) !important;
+
+  border: none !important;
+
+  border-radius: 10px !important;
+
+  padding: 10px 12px !important;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.12);
+
+  color: #111827 !important;
+}
+
+/* 🔥 ZOOM CONTROLS */
+.leaflet-control-zoom {
+  border: none !important;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.15);
+}
+
+.leaflet-control-zoom a {
+  background: white !important;
+
+  color: #111827 !important;
+}
+
+/* 🔥 LEGEND */
+.map-legend {
+  position: absolute;
+
+  bottom: 16px;
+  left: 16px;
+
+  z-index: 1000;
+
+  background: rgba(255,255,255,0.96);
+
+  backdrop-filter: blur(10px);
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.1);
+
+  font-size: 14px;
+}
+
+.map-legend h4 {
+  font-size: 13px;
+
+  margin-bottom: 10px;
+
+  color: #111827;
+}
+
+.map-legend div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+}
+
+.legend-color.red {
+  background: #dc2626;
+}
+
+.legend-color.yellow {
+  background: #f59e0b;
+}
+
+.legend-color.green {
+  background: #16a34a;
+}

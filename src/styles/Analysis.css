@@ -1,0 +1,796 @@
+/* ========== Layout ========== */
+
+.analysis-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f0f4f8;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* ========== Sidebar ========== */
+  
+  .analysis-sidebar {
+    width: 200px;
+    min-width: 200px;
+    background: #0d1b2e;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+  }
+  
+  .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 20px 18px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  
+  .sidebar-logo {
+    width: 34px;
+    height: 34px;
+    background: #1e88e5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  
+  .sidebar-brand-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 10px;
+    flex: 1;
+  }
+  
+  .sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .sidebar-nav-item:hover {
+    background: rgba(255,255,255,0.07);
+    color: #e2e8f0;
+  }
+  
+  .sidebar-nav-item.active {
+    background: #1e88e5;
+    color: #fff;
+  }
+  
+  .sidebar-footer-card {
+    margin: 14px 12px 18px;
+    background: rgba(30, 136, 229, 0.12);
+    border: 1px solid rgba(30, 136, 229, 0.22);
+    border-radius: 12px;
+    padding: 16px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .sidebar-footer-illustration {
+    color: #1e88e5;
+    margin-bottom: 8px;
+  }
+  
+  .sidebar-footer-tagline {
+    color: #e2e8f0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .sidebar-footer-sub {
+    color: #7892aa;
+    font-size: 0.75rem;
+    margin: 4px 0 0;
+    line-height: 1.5;
+  }
+  
+  /* ========== Main Content ========== */
+  
+  .analysis-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 24px 30px;
+    overflow-y: auto;
+    min-width: 0;
+  }
+  
+  /* ========== Header ========== */
+  
+  .analysis-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .analysis-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    color: #1e88e5;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.15s;
+  }
+  
+  .btn-back:hover {
+    opacity: 0.75;
+  }
+  
+  .analysis-title-block {
+    margin-top: 2px;
+  }
+  
+  .analysis-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .analysis-subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 4px 0 0;
+  }
+  
+  .analysis-header-cards {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  
+  .header-info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.07);
+    min-width: 170px;
+  }
+  
+  .header-info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .rainfall-icon-bg {
+    background: #e3f2fd;
+    color: #1e88e5;
+  }
+  
+  .clock-icon-bg {
+    background: #e8f5e9;
+    color: #388e3c;
+  }
+  
+  .header-info-label {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin: 0 0 2px;
+  }
+  
+  .header-info-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 2px;
+    line-height: 1;
+  }
+  
+  .header-info-value span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+  }
+  
+  .header-info-sub {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin: 0;
+  }
+  
+  .header-time {
+    font-size: 0.85rem;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  
+  /* ========== Rows ========== */
+  
+  .analysis-row {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .analysis-row-top {
+    align-items: stretch;
+  }
+  
+  .analysis-row-mid {
+    align-items: stretch;
+  }
+  
+  .analysis-row-bottom {
+    align-items: stretch;
+  }
+  
+  /* ========== Glass Card ========== */
+  
+  .glass-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 2px 14px rgba(15,23,42,0.07);
+    border: 1px solid rgba(226,232,240,0.8);
+  }
+  
+  .card-section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1e88e5;
+    margin: 0 0 16px;
+  }
+  
+  /* ========== Ward Overview ========== */
+  
+  .ward-overview-card {
+    flex: 1;
+    min-width: 0;
+    max-width: 420px;
+  }
+  
+  .ward-overview-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .ward-name-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .ward-pin-icon {
+    color: #1e88e5;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  
+  .ward-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .ward-id {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin: 3px 0 0;
+  }
+  
+  .risk-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .risk-score-block {
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 12px 0;
+    margin-bottom: 16px;
+  }
+  
+  .risk-score-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  
+  .risk-score-value {
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .risk-score-max {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #94a3b8;
+  }
+  
+  /* ========== Ward Detail Rows ========== */
+  
+  .ward-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .detail-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .detail-row:last-child {
+    border-bottom: none;
+  }
+  
+  .detail-icon {
+    color: #64748b;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .detail-label {
+    flex: 1;
+    font-size: 0.875rem;
+    color: #475569;
+    font-weight: 500;
+  }
+  
+  .detail-value {
+    font-size: 0.875rem;
+    color: #0f172a;
+    font-weight: 600;
+    text-align: right;
+  }
+  
+  /* ========== Ward Map ========== */
+  
+  .ward-map-card {
+    flex: 1.5;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ward-map-container {
+    flex: 1;
+    min-height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+  
+  /* ========== Risk Breakdown ========== */
+  
+  .risk-breakdown-card {
+    flex: 1.4;
+    min-width: 0;
+  }
+  
+  .risk-bar-item {
+    margin-bottom: 20px;
+  }
+  
+  .risk-bar-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .risk-bar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .risk-bar-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .rain-icon-bg {
+    background: #e3f2fd;
+    color: #1e88e5;
+  }
+  
+  .elev-icon-bg {
+    background: #e8f5e9;
+    color: #388e3c;
+  }
+  
+  .water-icon-bg {
+    background: #e0f2fe;
+    color: #0284c7;
+  }
+  
+  .risk-bar-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .risk-bar-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 2px;
+  }
+  
+  .risk-bar-desc {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+  
+  .risk-bar-score-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 1px;
+    flex-shrink: 0;
+  }
+  
+  .risk-bar-score {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .risk-bar-max {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+  
+  .risk-bar-badge {
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border: 1.5px solid;
+    background: transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .risk-bar-track {
+    width: 100%;
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  
+  .risk-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.5s ease;
+  }
+  
+  /* ========== Risk Summary ========== */
+  
+  .risk-summary-card {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .risk-summary-main {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  
+  .risk-summary-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .risk-summary-title {
+    font-size: 0.9rem;
+    color: #0f172a;
+    margin: 0 0 8px;
+    line-height: 1.5;
+  }
+  
+  .risk-summary-body {
+    font-size: 0.82rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .risk-comparison-card {
+    background: #fff5f5;
+    border: 1px solid #fee2e2;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  
+  .risk-comparison-icon {
+    width: 36px;
+    height: 36px;
+    background: #fee2e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444;
+    flex-shrink: 0;
+  }
+  
+  .risk-comparison-label {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin: 0 0 2px;
+  }
+  
+  .risk-comparison-pct {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ef4444;
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .risk-comparison-sub {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin: 2px 0 0;
+  }
+  
+  /* ========== Key Insights ========== */
+  
+  .key-insights-card {
+    flex: 1.4;
+    min-width: 0;
+  }
+  
+  .insights-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .insight-card {
+    flex: 1;
+    min-width: 140px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .insight-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .insight-text {
+    font-size: 0.8rem;
+    color: #334155;
+    margin: 0;
+    line-height: 1.55;
+    font-weight: 500;
+  }
+  
+  /* ========== Next Step ========== */
+  
+  .next-step-card {
+    flex: 1;
+    min-width: 0;
+    background: #f0f7ff;
+    border: 1px solid #bfdbfe;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  
+  .next-step-inner {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  
+  .next-step-icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: #1e88e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  
+  .next-step-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px;
+  }
+  
+  .next-step-sub {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin: 0;
+  }
+  
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #1e88e5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.12s;
+    width: 100%;
+  }
+  
+  .btn-action:hover {
+    background: #1565c0;
+    transform: translateY(-1px);
+  }
+  
+  .btn-arrow {
+    transform: rotate(180deg);
+  }
+  
+  /* ========== No Ward State ========== */
+  
+  .analysis-no-ward {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex: 1;
+    color: #64748b;
+    padding: 60px 20px;
+  }
+  
+  .analysis-no-ward p {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  /* ========== Responsive ========== */
+  
+  @media (max-width: 1024px) {
+    .analysis-row-top,
+    .analysis-row-mid,
+    .analysis-row-bottom {
+      flex-direction: column;
+    }
+  
+    .ward-overview-card,
+    .ward-map-card {
+      max-width: 100%;
+    }
+  
+    .analysis-header {
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .analysis-sidebar {
+      display: none;
+    }
+  
+    .analysis-main {
+      padding: 14px;
+    }
+  
+    .insights-grid {
+      flex-direction: column;
+    }
+  }
+  
