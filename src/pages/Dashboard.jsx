@@ -13,6 +13,8 @@ export default function Dashboard() {
 
   const [rainfall, setRainfall] = useState(0);
 
+  const [totalWards, setTotalWards] = useState(0);
+
   const [loading, setLoading] = useState(true);
 
   // 🔥 FETCH BACKEND DATA
@@ -24,16 +26,25 @@ export default function Dashboard() {
 
       .then((apiData) => {
 
-        // STORE DATA
-        setData(apiData.wards);
+        console.log("API DATA:", apiData);
+
+        // STORE WARDS
+        setData(apiData.wards || []);
 
         // STORE RAINFALL
-        setRainfall(apiData.rainfall);
+        setRainfall(apiData.rainfall || 0);
 
-        // SAVE TO LOCALSTORAGE
+        // STORE TOTAL WARDS
+        setTotalWards(
+          apiData.total_wards ||
+          apiData.wards?.length ||
+          0
+        );
+
+        // SAVE COMPLETE RESPONSE
         localStorage.setItem(
           "riskData",
-          JSON.stringify(apiData.wards)
+          JSON.stringify(apiData)
         );
 
         setLoading(false);
@@ -41,7 +52,10 @@ export default function Dashboard() {
 
       .catch((err) => {
 
-        console.error("Backend Fetch Error:", err);
+        console.error(
+          "Backend Fetch Error:",
+          err
+        );
 
         setLoading(false);
       });
@@ -67,8 +81,6 @@ export default function Dashboard() {
   }
 
   // 🔥 KPI CALCULATIONS
-  const totalWards = data.length;
-
   const high = data.filter(
     (w) => w.level === "HIGH"
   ).length;
