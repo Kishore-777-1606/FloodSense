@@ -20,7 +20,9 @@ export default function Dashboard() {
   // 🔥 FETCH BACKEND DATA
   useEffect(() => {
 
-    fetch("https://floodsense-api.onrender.com/get-risk?rainfall=200")
+    fetch(
+  `https://floodsense-api.onrender.com/get-risk?rainfall=${rainfall}`
+)
 
       .then((res) => res.json())
 
